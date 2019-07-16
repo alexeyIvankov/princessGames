@@ -19,7 +19,7 @@ public class Popup : MonoBehaviour
     
     void Update()
     {
-        Debug.Log("SCENE" + _gameManager.getNameScene());
+       // Debug.Log("SCENE" + _gameManager.getNameScene());
         if (_gameManager.getNameScene() != null)
         {
             Vector3 Direction = cam1.TransformDirection(Vector3.forward);

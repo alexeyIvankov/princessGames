@@ -26,7 +26,7 @@ public class Dom : MonoBehaviour
 
     private void OnMouseEnter()
     {
-        Debug.Log("POINTER IS HEREEEEE!!!!!!");
+//        Debug.Log("POINTER IS HEREEEEE!!!!!!");
         if (EventSystem.current.IsPointerOverGameObject())
             return;
         GetComponent<Renderer>().material.color = hoverColor;

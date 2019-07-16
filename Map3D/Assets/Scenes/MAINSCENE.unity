@@ -6550,6 +6550,18 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 353226539}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &780041512 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2929252283123773951, guid: aaa2c939c0359ac4dbce3f49e8b90252,
+    type: 3}
+  m_PrefabInstance: {fileID: 1604309118}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 45977bbae16431c46a013576a1aea384, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &797863134 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4779358099310956, guid: babde3f3ef45f4048bbca9fdd43e2974,
@@ -7963,6 +7975,7 @@ MonoBehaviour:
   agent: {fileID: 965088981}
   anim: {fileID: 965088974}
   character: {fileID: 965088983}
+  leftJoystick: {fileID: 780041512}
 --- !u!114 &965088983
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15100,6 +15113,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 5400000, guid: 69c3ed15e9d13481e8f7dc4db5532fb6, type: 3}
+      propertyPath: m_Mass
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 11400114, guid: 69c3ed15e9d13481e8f7dc4db5532fb6, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 69c3ed15e9d13481e8f7dc4db5532fb6, type: 3}
@@ -22193,11 +22210,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1292482136}
     m_Modifications:
-    - target: {fileID: 2929252283123773939, guid: aaa2c939c0359ac4dbce3f49e8b90252,
-        type: 3}
-      propertyPath: m_Name
-      value: Fixed Joystick
-      objectReference: {fileID: 0}
     - target: {fileID: 2929252283123773938, guid: aaa2c939c0359ac4dbce3f49e8b90252,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -22303,11 +22315,16 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 2929252283123773939, guid: aaa2c939c0359ac4dbce3f49e8b90252,
+        type: 3}
+      propertyPath: m_Name
+      value: Fixed Joystick
+      objectReference: {fileID: 0}
     - target: {fileID: 2929252283123773937, guid: aaa2c939c0359ac4dbce3f49e8b90252,
         type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 5b56d9fa0e8bd6e409ed188db38a692c,
+      objectReference: {fileID: 21300000, guid: a6c56474666ce0647bdb766e9b4764b3,
         type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: aaa2c939c0359ac4dbce3f49e8b90252, type: 3}
