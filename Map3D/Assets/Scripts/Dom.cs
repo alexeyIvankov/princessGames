@@ -10,7 +10,8 @@ public class Dom : MonoBehaviour
     public Color hoverColor;
     private GameManager gameManager;
     private Renderer rend;
-    public SceneAsset sceneName;
+    [SerializeField]
+    public SceneField sceneName;
 
    
 
@@ -45,6 +46,6 @@ public class Dom : MonoBehaviour
 
     private void OnMouseDown()
     {
-        gameManager.setNameScene(sceneName.name);
+        gameManager.setNameScene(sceneName.SceneName);
     }
 }
