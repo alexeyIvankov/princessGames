@@ -1,1 +1,1 @@
-{"_timerModels":[{"_timeLeft":{"_days":0,"_hours":0,"_minutes":7,"_seconds":53},"_timeInitial":{"_days":0,"_hours":0,"_minutes":7,"_seconds":54},"_paused":false,"_lastUpdate":132078586863635062,"_name":"Timer1"}]}
+{"_timerModels":[{"_timeLeft":{"_days":0,"_hours":0,"_minutes":0,"_seconds":15},"_timeInitial":{"_days":0,"_hours":0,"_minutes":0,"_seconds":15},"_paused":true,"_lastUpdate":132078696303947215,"_name":"Timer2"}]}
