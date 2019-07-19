@@ -44,7 +44,8 @@ public class TimerController : MonoBehaviour
     {
         if (_timeModels.ContainsKey(timerName))
         {
-            EditorUtility.DisplayDialog("Имя занято", "Данное имя используется для другого таймера.", "Переименовать");
+            
+           // EditorUtility.DisplayDialog("Имя занято", "Данное имя используется для другого таймера.", "Переименовать");
             return false;
         }
         _timeModels.Add(timerName, timerModel);
@@ -59,7 +60,7 @@ public class TimerController : MonoBehaviour
     {
         if (_timeModels.ContainsKey(newTimerName))
         {
-            EditorUtility.DisplayDialog("Имя занято", "Данное имя используется для другого таймера.", "Переименовать");
+          //  EditorUtility.DisplayDialog("Имя занято", "Данное имя используется для другого таймера.", "Переименовать");
             return false;
         }
         var timeModel = _timeModels[oldTimerName];
