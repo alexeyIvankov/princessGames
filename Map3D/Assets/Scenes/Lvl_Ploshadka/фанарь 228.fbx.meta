@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: dbd0b68bd467a0f4e8acbb5d9cec144c
+guid: 0d3cd1bb88909df42ada232df20dbd66
 ModelImporter:
   serializedVersion: 28
   internalIDToNameTable: []
@@ -7,23 +7,8 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: g_group1_pCube2_group1_pCube2Mat
-    second: {fileID: 2100000, guid: 884a636ed88ad83499d05e6c9b46c97b, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: g_group1_pCube6_group1_pCube6Mat
-    second: {fileID: 2100000, guid: 55e65044354296048940f9079660a831, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: g_group1_pTorus2_group1_pTorus2Mat
-    second: {fileID: 2100000, guid: 0036e1a816660b84eba848a5802032b6, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: g_pCube1_group1_pCube1_group1Mat
-    second: {fileID: 2100000, guid: 096d13d07c3636e45810cb11c84992dd, type: 2}
+      name: blinn1
+    second: {fileID: 2100000, guid: 118ed881a9b2f2a4688f690ca0e6eb1a, type: 2}
   materials:
     materialImportMode: 1
     materialName: 0
