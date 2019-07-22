@@ -53,5 +53,8 @@ sysinfo.txt
 *.apk
 *.unitypackage
 
+*.dll
+Map3D/Assets/Plugins/Editor/RiderPlugin/*.dll.meta
+
 # Crashlytics generated file
 crashlytics-build.properties
