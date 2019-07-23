@@ -5,9 +5,10 @@ using System;
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
-    [SerializeField] private GameObject enter;
+    [SerializeField] public GameObject enter;
     public bool visible;
     private static String sceneName = null;
+    public bool endCol;
 
     private void Awake()
     {
@@ -47,6 +48,7 @@ public class GameManager : MonoBehaviour
         setNameScene(null);
         enter.SetActive(false);
         visible = false;
+        endCol = true;
     }
 
     public void EnterInHouse()

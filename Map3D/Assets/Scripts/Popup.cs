@@ -17,32 +17,32 @@ public class Popup : MonoBehaviour
     }
 
     
-    void Update()
-    {
-       // Debug.Log("SCENE" + _gameManager.getNameScene());
-        if (_gameManager.getNameScene() != null)
-        {
-            Vector3 Direction = cam1.TransformDirection(Vector3.forward);
-            if (Physics.Raycast(cam1.position, Direction, out rch1, 3))
-            {
-                // Луч будет выходить из камеры на расстоянии 3 метра
-                if (rch1.collider.GetComponent<Bot1>())
-                {
-                    _gameManager.visible = true;
-                }
-            }
-        }
-    }
+//    void Update()
+//    {
+//       // Debug.Log("SCENE" + _gameManager.getNameScene());
+//        if (_gameManager.getNameScene() != null)
+//        {
+//            Vector3 Direction = cam1.TransformDirection(Vector3.forward);
+//            if (Physics.Raycast(cam1.position, Direction, out rch1, 3))
+//            {
+//                // Луч будет выходить из камеры на расстоянии 3 метра
+//                if (rch1.collider.GetComponent<Bot1>())
+//                {
+//                    _gameManager.visible = true;
+//                }
+//            }
+//        }
+//    }
 
-    void OnGUI()
-    {
-        //Создадим диалог
-        if (_gameManager.visible)
-        {
-            // если visible = true
-            _gameManager.EnterInHouse();
-        }
-    }
+//    void OnGUI()
+//    {
+//        //Создадим диалог
+//        if (_gameManager.visible)
+//        {
+//            // если visible = true
+//            _gameManager.EnterInHouse();
+//        }
+//    }
 
     private bool IsMouseOverUI()
     {
