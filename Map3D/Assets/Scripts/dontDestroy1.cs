@@ -5,17 +5,15 @@ using UnityEngine;
 public class dontDestroy1 : MonoBehaviour
 
 {
-    public static Transform playerTransform;
-
     void Awake()
     {
-        if (playerTransform = null)
+        GameObject[] objs = GameObject.FindGameObjectsWithTag("Player");
+
+        if (objs.Length > 1)
         {
             Destroy(gameObject);
-            return;
         }
 
-        DontDestroyOnLoad(transform.gameObject);
-        playerTransform = transform;
+        DontDestroyOnLoad(gameObject);
     }
 }

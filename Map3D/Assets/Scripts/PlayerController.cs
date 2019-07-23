@@ -15,6 +15,8 @@ public class PlayerController : MonoBehaviour
     private Vector3 offset; //Private variable to store the offset distance between the player and camera
     public FixedJoystick leftJoystick;
     protected Rigidbody Rigidbody;
+    public float zoomOutMin = 50f;
+    public float zoomOutMax = 120f;
 
 
     // Start is called before the first frame update
@@ -29,9 +31,26 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        zoom(Input.GetAxis("Mouse ScrollWheel"));
+
+        if (Input.touchCount == 2)
+        {
+            Touch touchZero = Input.GetTouch(0);
+            Touch touchOne = Input.GetTouch(1);
+
+            Vector2 touchZeroPrevPos = touchZero.position - touchZero.deltaPosition;
+            Vector2 touchOnePrevPos = touchOne.position - touchOne.deltaPosition;
+
+            float prevMagnitude = (touchZeroPrevPos - touchOnePrevPos).magnitude;
+            float currentMagnitude = (touchZero.position - touchOne.position).magnitude;
+
+            float difference = currentMagnitude - prevMagnitude;
+            zoom(difference * 0.01f);
+        }
+
         if (Input.GetMouseButtonDown(0) && !IsMouseOverUI())
         {
-          //  Debug.Log("HERE222222222");
+            //  Debug.Log("HERE222222222");
             Ray ray = camera.ScreenPointToRay(Input.mousePosition);
             RaycastHit hit;
             if (Physics.Raycast(ray, out hit))
@@ -40,7 +59,6 @@ public class PlayerController : MonoBehaviour
             }
         }
 
-
         else if (leftJoystick.input != Vector2.zero)
         {
             agent.ResetPath();
@@ -48,12 +66,12 @@ public class PlayerController : MonoBehaviour
             var input = new Vector3(leftJoystick.input.x, 0, leftJoystick.input.y);
             var vel = Quaternion.AngleAxis(221.597f, Vector3.up) * input * 5f;
             var velocity = new Vector3(vel.x, Rigidbody.velocity.y, vel.z);
-        //         agent.SetDestination(Vector3.Lerp(Rigidbody.position, velocity, 0.23f));
-           Debug.Log("DESTINATION" + agent.destination);
-           // Debug.Log("velocity" + velocity);
-           Debug.Log("HERE2222222" + transform.position);
+            //         agent.SetDestination(Vector3.Lerp(Rigidbody.position, velocity, 0.23f));
+            Debug.Log("DESTINATION" + agent.destination);
+            // Debug.Log("velocity" + velocity);
+            Debug.Log("HERE2222222" + transform.position);
 
-              agent.velocity = new Vector3(vel.x, Rigidbody.velocity.y, vel.z);
+            agent.velocity = new Vector3(vel.x, Rigidbody.velocity.y, vel.z);
             transform.rotation =
                 Quaternion.AngleAxis(
                     221.597f + Vector3.SignedAngle(Vector3.forward, input.normalized + Vector3.forward * 0.001f,
@@ -92,6 +110,10 @@ public class PlayerController : MonoBehaviour
 //        }
     }
 
+    void zoom(float increment)
+    {
+        camera.orthographicSize = Mathf.Clamp(camera.orthographicSize - increment, zoomOutMin, zoomOutMax);
+    }
 
     // LateUpdate is called after Update each frame
     void LateUpdate()
