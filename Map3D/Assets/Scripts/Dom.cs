@@ -73,14 +73,14 @@ public class Dom : MonoBehaviour
         {
             dialogueButton.SetActive(true);
             // Time.timeScale = 0;
-           // gameManager.EnterInHouse();
+            // gameManager.EnterInHouse();
             gameManager.setNameScene(sceneName.SceneName);
         }
     }
 
     private void OnTriggerExit(Collider other)
     {
-       // gameManager.ExitHouse1();
+        gameManager.ExitHouse1();
         dialogueButton.SetActive(false);
     }
 }
