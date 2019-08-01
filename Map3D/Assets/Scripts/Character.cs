@@ -6,8 +6,9 @@ using UnityEngine;
 public class Character 
 {
     public String characterName;
-
-    private static int Id;
+    //Character Id Field
+    //Needs to change 
+    private static int _id;
     public int id;
     public String buttonSpriteName;
 
@@ -15,8 +16,14 @@ public class Character
 
     public Character(String prefabName, String buttonSpriteName, String name)
     {
-        this.id = Id;
-        Id++;
+        this.id = _id;
+        _id++;
+        //Gaystvo
+        //Needs to change
+        if (_id > 3)
+        {
+            _id = 0;
+        }
         this.prefabName = prefabName;
         this.buttonSpriteName = buttonSpriteName;
         this.characterName = name;

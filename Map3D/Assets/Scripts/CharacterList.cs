@@ -9,6 +9,10 @@ public class CharacterList
     // Start is called before the first frame update
     public CharacterList()
     {
+        if (characters.Count != 0)
+        {
+            characters.Clear();
+        }
         characters.Add(new Character("Elf", "Elf", "Геннадий"));
         characters.Add(new Character("Soldier", "Soldier", "Гоша"));
         characters.Add(new Character("Queen", "Queen", "Валентина"));

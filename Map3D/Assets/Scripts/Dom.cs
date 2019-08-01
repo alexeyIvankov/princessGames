@@ -12,8 +12,7 @@ public class Dom : MonoBehaviour
     [SerializeField] public SceneField sceneName;
     public Transform player;
     public GameObject dialogueButton;
-
-
+   
     private Color startColor;
 
     // Start is called before the first frame update
