@@ -45,10 +45,10 @@ public class GameManager : MonoBehaviour
 
     public void ExitHouse1()
     {
-        setNameScene(null);
+        //setNameScene(null);
         enter.SetActive(false);
         visible = false;
-        endCol = true;
+        //endCol = true;
     }
 
     public void EnterInHouse()

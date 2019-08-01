@@ -124,6 +124,6 @@ public class PlayerController : MonoBehaviour
 
     private bool IsMouseOverUI()
     {
-        return EventSystem.current.IsPointerOverGameObject();
+        return EventSystem.current.IsPointerOverGameObject(Input.GetTouch(0).fingerId);
     }
 }

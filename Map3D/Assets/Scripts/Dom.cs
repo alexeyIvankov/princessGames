@@ -62,7 +62,7 @@ public class Dom : MonoBehaviour
 
         if (gameManager.endCol)
         {
-            Time.timeScale = 1;
+            // Time.timeScale = 1;
         }
     }
 

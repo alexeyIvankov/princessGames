@@ -45,7 +45,7 @@ public class ClickerManager : MonoBehaviour
     {
         Laser = Instantiate(laser).Init();
         existingRings.Add(BigRing());
-        Velocity = 1 * 0.4f;
+        Velocity = 1;
         notUsedColors = new List<Color>(colors);
         UpdateColor();
         lvl = 1;
@@ -152,7 +152,7 @@ public class ClickerManager : MonoBehaviour
                 case 3:
                 {
                     notUsedColors = new List<Color>(colors);
-                    Velocity = Velocity * 1.5f;
+                    Velocity = Velocity * 1.25f;
                     existingRings.Add(BigRing());
                     existingRings.Add(MeanRing());
                     existingRings.Add(SmallRing());
