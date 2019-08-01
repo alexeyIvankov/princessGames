@@ -9,7 +9,7 @@ public class SceneField
     private Object m_SceneAsset;
     [SerializeField]
     private string m_SceneName = "";
-    public string SceneName
+    public string     SceneName
     {
         get { return m_SceneName; }
     }

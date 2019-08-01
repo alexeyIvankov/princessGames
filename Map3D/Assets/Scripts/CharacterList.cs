@@ -5,7 +5,7 @@ using UnityEngine;
 public class CharacterList
 {
     public List<Character> characters = new List<Character>();
-    
+
     // Start is called before the first frame update
     public CharacterList()
     {
