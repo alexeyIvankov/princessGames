@@ -1,5 +1,8 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using System.Collections;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 /// <summary>
 /// Spritesheet for Flappy Bird found here: http://www.spriters-resource.com/mobile_phone/flappybird/sheet/59537/
@@ -7,7 +10,6 @@ using System.Collections;
 /// </summary>
 public class FlappyScript : MonoBehaviour
 {
-
     public AudioClip FlyAudioClip, DeathAudioClip, ScoredAudioClip;
     public Sprite GetReadySprite;
     public float RotateUpSpeed = 1, RotateDownSpeed = 1;
@@ -19,23 +21,25 @@ public class FlappyScript : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-
+        GameStateManager.GameState = GameState.Intro;
     }
 
     FlappyYAxisTravelState flappyYAxisTravelState;
 
     enum FlappyYAxisTravelState
     {
-        GoingUp, GoingDown
+        GoingUp,
+        GoingDown
     }
 
     Vector3 birdRotation = Vector3.zero;
+
     // Update is called once per frame
     void Update()
     {
         //handle back key in Windows Phone
-        if (Input.GetKeyDown(KeyCode.Escape))
-            Application.Quit();
+//        if (Input.GetKeyDown(KeyCode.Escape))
+//            Application.Quit();
 
         if (GameStateManager.GameState == GameState.Intro)
         {
@@ -56,7 +60,6 @@ public class FlappyScript : MonoBehaviour
             {
                 BoostOnYAxis();
             }
-
         }
 
         else if (GameStateManager.GameState == GameState.Dead)
@@ -70,13 +73,12 @@ public class FlappyScript : MonoBehaviour
 
             //check if user wants to restart the game
             if (restartButtonGameCollider == Physics2D.OverlapPoint
-                (Camera.main.ScreenToWorldPoint(contactPoint)))
+                    (Camera.main.ScreenToWorldPoint(contactPoint)))
             {
                 GameStateManager.GameState = GameState.Intro;
                 Application.LoadLevel(Application.loadedLevelName);
             }
         }
-
     }
 
 
@@ -86,8 +88,10 @@ public class FlappyScript : MonoBehaviour
         if (GameStateManager.GameState == GameState.Intro)
         {
             if (GetComponent<Rigidbody2D>().velocity.y < -1) //when the speed drops, give a boost
-                GetComponent<Rigidbody2D>().AddForce(new Vector2(0, GetComponent<Rigidbody2D>().mass * 5500 * Time.deltaTime)); //lots of play and stop 
-                                                        //and play and stop etc to find this value, feel free to modify
+                GetComponent<Rigidbody2D>()
+                    .AddForce(new Vector2(0,
+                        GetComponent<Rigidbody2D>().mass * 5500 * Time.deltaTime)); //lots of play and stop 
+            //and play and stop etc to find this value, feel free to modify
         }
         else if (GameStateManager.GameState == GameState.Playing || GameStateManager.GameState == GameState.Dead)
         {
@@ -97,7 +101,7 @@ public class FlappyScript : MonoBehaviour
 
     bool WasTouchedOrClicked()
     {
-        if (Input.GetButtonUp("Jump") || Input.GetMouseButtonDown(0) || 
+        if (Input.GetButtonUp("Jump") || Input.GetMouseButtonDown(0) ||
             (Input.touchCount > 0 && Input.touches[0].phase == TouchPhase.Ended))
             return true;
         else
@@ -114,7 +118,6 @@ public class FlappyScript : MonoBehaviour
         GetComponent<Rigidbody2D>().velocity = new Vector2(0, VelocityPerJump);
         GetComponent<AudioSource>().PlayOneShot(FlyAudioClip);
     }
-
 
 
     /// <summary>
@@ -153,7 +156,8 @@ public class FlappyScript : MonoBehaviour
     {
         if (GameStateManager.GameState == GameState.Playing)
         {
-            if (col.gameObject.tag == "Pipeblank") //pipeblank is an empty gameobject with a collider between the two pipes
+            if (col.gameObject.tag == "Pipeblank"
+            ) //pipeblank is an empty gameobject with a collider between the two pipes
             {
                 GetComponent<AudioSource>().PlayOneShot(ScoredAudioClip);
                 ScoreManagerScript.Score++;
@@ -183,4 +187,9 @@ public class FlappyScript : MonoBehaviour
         GetComponent<AudioSource>().PlayOneShot(DeathAudioClip);
     }
 
+    public void OnPlayClick()
+    {
+        GameStateManager.GameState = GameState.Dead;
+        SceneManager.LoadScene("Lelel_main");
+    }
 }

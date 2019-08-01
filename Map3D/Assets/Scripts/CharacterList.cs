@@ -13,10 +13,10 @@ public class CharacterList
         {
             characters.Clear();
         }
-        characters.Add(new Character("Elf", "Elf", "Геннадий"));
-        characters.Add(new Character("Soldier", "Soldier", "Гоша"));
-        characters.Add(new Character("Queen", "Queen", "Валентина"));
-        characters.Add(new Character("Woman", "Woman", "Семён"));
+        characters.Add(new Character("Elf", "Elf", "TEST1"));
+        characters.Add(new Character("Soldier", "Soldier", "TEST2"));
+        characters.Add(new Character("Queen", "Queen", "TEST3"));
+        characters.Add(new Character("Woman", "Woman", "TEST4"));
     }
 
     public Character GetCharacter(int id)
